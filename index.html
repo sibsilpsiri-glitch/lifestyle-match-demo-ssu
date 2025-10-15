@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ไลฟ์สไตล์แมตช์ (Beta)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="setup-screen" class="screen">
+        <h2>เข้าสู่ระบบแบบทันที 👋</h2>
+        <p>กรุณาบอกเราเกี่ยวกับคุณและไลฟ์สไตล์หลักของคุณ เพื่อเริ่มจับคู่</p>
+        <input type="text" id="user-name" placeholder="ชื่อเล่นของคุณ">
+        <select id="user-lifestyle">
+            <option value="">-- เลือกไลฟ์สไตล์หลัก --</option>
+            <option value="booklover">รักการอ่าน 📚</option>
+            <option value="digitalnomad">ทำงานอิสระ/ท่องเที่ยว ✈️</option>
+            <option value="healthnut">สายสุขภาพ/ออกกำลังกาย 💪</option>
+        </select>
+        <button onclick="saveUserProfile()">เข้าสู่ระบบและเริ่มแมตช์</button>
+    </div>
+
+    <div id="matching-screen" class="screen" style="display: none;">
+        <h3>โปรไฟล์ที่เข้ากันได้</h3>
+        <div id="profile-card">
+            <h3 id="match-name"></h3>
+            <p id="match-lifestyle"></p>
+            <p>ความเข้ากันได้โดยประมาณ: <span id="match-score"></span>%</p>
+        </div>
+        <div class="actions">
+            <button onclick="dislikeProfile()">👎 ไม่ใช่</button>
+            <button onclick="likeProfile()">💖 ใช่เลย!</button>
+        </div>
+    </div>
+
+    <div id="result-screen" class="screen" style="display: none;">
+        <h2>🎉 คุณได้จับคู่แล้ว!</h2>
+        <p>ยินดีด้วย คุณได้แมตช์กับ <span id="matched-name"></span> ที่มีไลฟ์สไตล์คล้ายกัน!</p>
+        <p>เนื่องจากเป็นระบบจำลอง คุณสามารถลองเริ่มใหม่ได้</p>
+        <button onclick="location.reload()">เริ่มใหม่</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
